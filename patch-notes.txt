@@ -1,7 +1,6 @@
-ui_element and ui_container
+container updates
 
-Added ui_element as a base class for ui elements.
+Container now knows when a child is added or deleted.
 
-Added box class to manage simple rect2 functions.
+Container will now re-organize children to fit a single style.
 
-Added ui_container to sort and contain ui elements.

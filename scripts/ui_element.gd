@@ -41,9 +41,12 @@ func _draw():
 
 func _notification(what):
 	if what==NOTIFICATION_PARENTED:
-		if get_parent().has_user_signal("got_new_child"):
-			get_parent().emit_signal("got_new_child",self)
+		if get_parent().has_method("adopted"):
+			get_parent().adopted(self)
 
 func box_updated():
-	pass
+	force_update=true
 
+func _exit_tree():
+	if get_parent().has_method("unadopted"):
+		get_parent().call_deferred("unadopted",self)

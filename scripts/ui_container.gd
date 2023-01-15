@@ -2,25 +2,9 @@ extends ui_element
 class_name ui_container
 
 
-# signal
-signal got_new_child
-
-
-func _init():
-	add_user_signal("got_new_child", [{"name": "child", "type": TYPE_OBJECT}])
-
 func _ready():
 	._ready()
-	var err=connect("got_new_child",self,"_on_box_container_node_added")
-	if err:
-		print_stack()
-	
 	draw_size=true
-
-func box_updated():
-	.box_updated()
-	force_update=true
-
 
 #
 func _input(event):
@@ -33,17 +17,15 @@ func _input(event):
 					INST.size=Vector2(32,12)
 					INST.color_size=Color.blue
 					add_child(INST)
+				elif event.button_index==BUTTON_RIGHT:
+					var list=get_children()
+					list[randi()%len(list)-1].queue_free()
 #
 
-func got_new_child(node):
-	printerr(node)
-
-
-# todo
-func _on_box_container_node_added(_node):
+func adopted(_node):
 	order_children()
 
-func _on_box_container_node_removed(_node):
+func unadopted(_node):
 	order_children()
 
 func order_children():
