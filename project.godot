@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "box",
+"language": "GDScript",
+"path": "res://classes/box.gd"
+}, {
+"base": "ui_element",
+"class": "ui_container",
+"language": "GDScript",
+"path": "res://scripts/ui_container.gd"
+}, {
+"base": "Node2D",
+"class": "ui_element",
+"language": "GDScript",
+"path": "res://scripts/ui_element.gd"
+} ]
+_global_script_class_icons={
+"box": "",
+"ui_container": "",
+"ui_element": ""
+}
+
+[application]
+
+config/name="Godot Ui"
+run/main_scene="res://objects/ui_container.tscn"
+config/icon="res://default/icon.png"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default/default_env.tres"
