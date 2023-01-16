@@ -1,5 +1,1 @@
-added some drawing functions
-
-draw_rounded_rectangle(_rect,_radius,_color), draws a rounded rectangle.
- needs some optimizations on the rounded corners.
-
+added README
