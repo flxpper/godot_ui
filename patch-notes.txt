@@ -1,6 +1,5 @@
-container updates
+added some drawing functions
 
-Container now knows when a child is added or deleted.
-
-Container will now re-organize children to fit a single style.
+draw_rounded_rectangle(_rect,_radius,_color), draws a rounded rectangle.
+ needs some optimizations on the rounded corners.
 
